@@ -7,23 +7,43 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Build artifacts
+dist/
+dist-ssr/
 *.local
+
+# Typescript
+*.tsbuildinfo
+next-env.d.ts
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.bak
+*_backup.*
 
-# Large static assets
+# Environment variables
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Large static assets (Project specific)
 public/static/dataset/
 public/static/pdfs/
 public/static/videos/
+
+# Vite
+vite.config.ts.timestamp-*
