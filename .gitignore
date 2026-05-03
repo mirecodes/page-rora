@@ -15,6 +15,9 @@ jspm_packages/
 dist/
 dist-ssr/
 *.local
+.parcel-cache
+.cache
+.turbo
 
 # Typescript
 *.tsbuildinfo
@@ -31,7 +34,14 @@ next-env.d.ts
 *.sln
 *.sw?
 *.bak
+*.tmp
+*.temp
 *_backup.*
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
 
 # Environment variables
 .env
@@ -41,9 +51,13 @@ next-env.d.ts
 .env.local
 
 # Large static assets (Project specific)
+# Only ignore if they are huge and managed externally
 public/static/dataset/
-public/static/pdfs/
-public/static/videos/
+# public/static/pdfs/
+# public/static/videos/
 
 # Vite
 vite.config.ts.timestamp-*
+
+# Testing
+/coverage

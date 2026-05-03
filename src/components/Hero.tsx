@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
                     </span>
 
                     {/* TODO: Add your supplementary material PDF or remove this section */}
-                    <span className="link-block">
+                    {/* <span className="link-block">
                       <a href="/static/pdfs/supplementary_material.pdf" target="_blank" rel="noreferrer"
                         className="external-link button is-normal is-rounded is-dark">
                         <span className="icon">
@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
                         </span>
                         <span>Supplementary</span>
                       </a>
-                    </span>
+                    </span> */}
 
                     {/* TODO: Replace with your GitHub repository URL */}
                     <span className="link-block">
@@ -91,7 +91,7 @@ export const Hero: React.FC = () => {
             {/* TODO: Replace with your teaser video */}
             <video id="tree" autoPlay controls muted loop height="100%" preload="metadata">
               {/* TODO: Add your video file path here */}
-              <source src="/static/videos/banner_video.mp4" type="video/mp4" />
+              <source src="/static/videos/articulation_video.mp4" type="video/mp4" />
             </video>
             {/* TODO: Replace with your video description */}
             <h2 className="subtitle has-text-centered">

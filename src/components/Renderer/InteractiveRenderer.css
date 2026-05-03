@@ -1,0 +1,84 @@
+.renderer-page-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.renderer-row {
+  width: 100%;
+}
+
+.renderer-viewer-section {
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background: #060610; /* Keep monitor dark */
+  border-radius: 20px;
+  border: 2px solid #0ea5e9; /* Bright blue border */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Error state */
+.renderer-error {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  padding: 40px;
+  height: 100%;
+}
+
+.renderer-error-icon {
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+.renderer-error h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #f87171;
+  margin: 0;
+}
+
+.renderer-error p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+}
+
+/* Placeholder while loading manifest */
+.renderer-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.2);
+  height: 100%;
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  animation: pulse 2s ease-in-out infinite;
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.95); }
+  50%       { opacity: 1;   transform: scale(1.05); }
+}
+
+.renderer-placeholder p {
+  font-size: 0.9rem;
+  margin: 0;
+}

@@ -22,7 +22,7 @@ export const Methodology: React.FC = () => {
 
             <div className="has-text-centered" style={{ marginTop: '2rem' }}>
               {/* TODO: Replace with your body image */}
-              <img src="/static/images/method_overview.jpg" alt="Method Overview" width="100%" style={{ borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
+              <img src="/static/images/pipeline_figure.png" alt="Method Overview" width="100%" style={{ borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
 
               <p className="is-size-6 has-text-grey" style={{ marginTop: '1rem' }}>
                 {/* TODO: Replace with your image caption */}
