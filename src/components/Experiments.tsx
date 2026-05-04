@@ -74,19 +74,16 @@ export const Experiments: React.FC = () => {
                 {qualitativeTab === 0 && (
                   <div className="animate__animated animate__fadeIn">
                     <img src="static/images/Picture1.png" alt="Qualitative Results Category 1" width="100%" style={{ borderRadius: '8px' }} />
-                    <p className="has-text-centered is-size-6 mt-2"><strong>Category 1:</strong> Kitchenware and Household Items</p>
                   </div>
                 )}
                 {qualitativeTab === 1 && (
                   <div className="animate__animated animate__fadeIn">
                     <img src="static/images/Picture2.png" alt="Qualitative Results Category 2" width="100%" style={{ borderRadius: '8px' }} />
-                    <p className="has-text-centered is-size-6 mt-2"><strong>Category 2:</strong> Furniture and Appliances</p>
                   </div>
                 )}
                 {qualitativeTab === 2 && (
                   <div className="animate__animated animate__fadeIn">
                     <img src="static/images/Picture3.png" alt="Qualitative Results Category 3" width="100%" style={{ borderRadius: '8px' }} />
-                    <p className="has-text-centered is-size-6 mt-2"><strong>Category 3:</strong> Tools and Electronic Devices</p>
                   </div>
                 )}
               </div>
