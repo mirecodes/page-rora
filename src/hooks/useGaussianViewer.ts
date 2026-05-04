@@ -8,14 +8,6 @@ import type { SceneConfig, SplatLoadState, RobotMetadata, JointMetadata } from '
 import yaml from 'js-yaml';
 import { DATA_ROOT } from '../components/Renderer/constants';
 
-interface JointInfo {
-  name: string;
-  type: string;
-  min: number;
-  max: number;
-  value: number;
-}
-
 interface UseGaussianViewerOptions {
   containerRef: React.RefObject<HTMLDivElement | null>;
   scene: SceneConfig | null;
