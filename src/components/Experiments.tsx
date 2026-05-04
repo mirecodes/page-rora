@@ -73,19 +73,19 @@ export const Experiments: React.FC = () => {
               <div className="content">
                 {qualitativeTab === 0 && (
                   <div className="animate__animated animate__fadeIn">
-                    <img src="/static/images/Picture1.png" alt="Qualitative Results Category 1" width="100%" style={{ borderRadius: '8px' }} />
+                    <img src="static/images/Picture1.png" alt="Qualitative Results Category 1" width="100%" style={{ borderRadius: '8px' }} />
                     <p className="has-text-centered is-size-6 mt-2"><strong>Category 1:</strong> Kitchenware and Household Items</p>
                   </div>
                 )}
                 {qualitativeTab === 1 && (
                   <div className="animate__animated animate__fadeIn">
-                    <img src="/static/images/Picture2.png" alt="Qualitative Results Category 2" width="100%" style={{ borderRadius: '8px' }} />
+                    <img src="static/images/Picture2.png" alt="Qualitative Results Category 2" width="100%" style={{ borderRadius: '8px' }} />
                     <p className="has-text-centered is-size-6 mt-2"><strong>Category 2:</strong> Furniture and Appliances</p>
                   </div>
                 )}
                 {qualitativeTab === 2 && (
                   <div className="animate__animated animate__fadeIn">
-                    <img src="/static/images/Picture3.png" alt="Qualitative Results Category 3" width="100%" style={{ borderRadius: '8px' }} />
+                    <img src="static/images/Picture3.png" alt="Qualitative Results Category 3" width="100%" style={{ borderRadius: '8px' }} />
                     <p className="has-text-centered is-size-6 mt-2"><strong>Category 3:</strong> Tools and Electronic Devices</p>
                   </div>
                 )}
@@ -113,7 +113,7 @@ export const Experiments: React.FC = () => {
                     <div className="card animate__animated animate__fadeIn">
                       <div className="card-image">
                         <figure className="image">
-                          <img src="/static/images/multi_axis_angle.png" alt="Axis Angle Error" />
+                          <img src="static/images/multi_axis_angle.png" alt="Axis Angle Error" />
                         </figure>
                       </div>
                       <div className="card-content p-3">
@@ -125,7 +125,7 @@ export const Experiments: React.FC = () => {
                     <div className="card animate__animated animate__fadeIn">
                       <div className="card-image">
                         <figure className="image">
-                          <img src="/static/images/multi_error_score.png" alt="Error Score" />
+                          <img src="static/images/multi_error_score.png" alt="Error Score" />
                         </figure>
                       </div>
                       <div className="card-content p-3">
@@ -137,7 +137,7 @@ export const Experiments: React.FC = () => {
                     <div className="card animate__animated animate__fadeIn">
                       <div className="card-image">
                         <figure className="image">
-                          <img src="/static/images/multi_origin_dist.png" alt="Origin Distance Error" />
+                          <img src="static/images/multi_origin_dist.png" alt="Origin Distance Error" />
                         </figure>
                       </div>
                       <div className="card-content p-3">

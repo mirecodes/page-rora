@@ -54,7 +54,7 @@ export const VideoSection: React.FC = () => {
                   {/* TODO: Add poster image for better preview */}
                   <video id="video1" controls muted loop height="100%" preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
                     {/* Your video file here */}
-                    <source src="/static/videos/carousel1.mp4" type="video/mp4" />
+                    <source src="static/videos/carousel1.mp4" type="video/mp4" />
                   </video>
                 </div>
               </SwiperSlide>
@@ -63,7 +63,7 @@ export const VideoSection: React.FC = () => {
                   {/* TODO: Add poster image for better preview */}
                   <video id="video2" controls muted loop height="100%" preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
                     {/* Your video file here */}
-                    <source src="/static/videos/carousel2.mp4" type="video/mp4" />
+                    <source src="static/videos/carousel2.mp4" type="video/mp4" />
                   </video>
                 </div>
               </SwiperSlide>
@@ -72,7 +72,7 @@ export const VideoSection: React.FC = () => {
                   {/* TODO: Add poster image for better preview */}
                   <video id="video3" controls muted loop height="100%" preload="metadata" style={{ width: '100%', height: '100%', objectFit: 'cover' }}>
                     {/* Your video file here */}
-                    <source src="/static/videos/carousel3.mp4" type="video/mp4" />
+                    <source src="static/videos/carousel3.mp4" type="video/mp4" />
                   </video>
                 </div>
               </SwiperSlide>

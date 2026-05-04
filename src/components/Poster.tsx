@@ -18,7 +18,7 @@ export const Poster: React.FC = () => {
                 boxShadow: '0 4px 20px rgba(0,0,0,0.1)' 
               }}>
                 <iframe 
-                  src="/static/pdfs/poster.pdf#toolbar=0&navpanes=0&scrollbar=0" 
+                  src="static/pdfs/poster.pdf#toolbar=0&navpanes=0&scrollbar=0" 
                   width="100%" 
                   height="100%" 
                   title="Research Poster"

@@ -16,7 +16,7 @@ export const Methodology: React.FC = () => {
             </div>
 
             <div className="has-text-centered" style={{ marginTop: '2rem', marginBottom: '2rem' }}>
-              <img src="/static/images/pipeline_figure.png" alt="Method Overview" width="100%" style={{ borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
+              <img src="static/images/pipeline_figure.png" alt="Method Overview" width="100%" style={{ borderRadius: '8px', boxShadow: '0 4px 6px rgba(0,0,0,0.1)' }} />
             </div>
           </div>
         </div>
