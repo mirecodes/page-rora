@@ -11,24 +11,33 @@ export const Hero: React.FC = () => {
               <div className="column has-text-centered">
                 {/* TODO: Replace with your paper title */}
                 <h1 className="title is-1 publication-title">
-                  Realistic Scene Reconstruction: Importing Real-World Objects into Gaussian Splats and Mesh Representation
+                  RORA: Realistic Object Reconstruction with Articulation
                 </h1>
-                <div className="is-size-5 publication-authors">
-                  {/* TODO: Replace with your paper authors and their personal links */}
+                <div className="is-size-5 publication-authors" style={{ fontWeight: 600, color: '#2b5876' }}>
                   <span className="author-block">
-                    <a href="FIRST AUTHOR PERSONAL LINK" target="_blank" rel="noreferrer">Lee Hyesung</a>,
-                  </span>
+                    Lee Hyesung<sup>1</sup>,
+                  </span>{' '}
                   <span className="author-block">
-                    <a href="SECOND AUTHOR PERSONAL LINK" target="_blank" rel="noreferrer">Lee Yongseok</a>,
-                  </span>
+                    Lee Youngseon<sup>1</sup>,
+                  </span>{' '}
                   <span className="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank" rel="noreferrer">Lee Yeongseon</a>
+                    Lee Kyutae<sup>2</sup>,
+                  </span>{' '}
+                  <span className="author-block">
+                    Lee Dongjun<sup>1</sup>,
+                  </span>{' '}
+                  <span className="author-block">
+                    Lee Yongseok<sup>2,*</sup>
                   </span>
                 </div>
 
-                <div className="is-size-5 publication-authors">
-                  {/* TODO: Replace with your institution and conference/journal info */}
-                  <span className="author-block">Seoul National Unviersity<br />Conference name and year</span>
+                <div className="is-size-5 publication-authors" style={{ marginTop: '0.5rem' }}>
+                  <span className="author-block"><sup>1</sup>Seoul National University</span>,&nbsp;&nbsp;
+                  <span className="author-block"><sup>2</sup>DGIST Robin Lab</span>
+                  <br />
+                  <span className="author-block" style={{ fontSize: '0.85em', color: '#555', marginTop: '0.25rem', display: 'inline-block' }}>
+                    <sup>*</sup>Corresponding author: <a href="mailto:yslee@dgist.ac.kr" style={{ color: '#3273dc' }}>yslee@dgist.ac.kr</a>
+                  </span>
                 </div>
 
                 <div className="column has-text-centered">
@@ -88,6 +97,7 @@ export const Hero: React.FC = () => {
       <section className="hero teaser">
         <div className="container is-max-desktop">
           <div className="hero-body">
+            <h2 className="title is-3 has-text-centered mb-5">Introduction Video</h2>
             {/* TODO: Replace with your teaser video */}
             <video id="tree" autoPlay controls muted loop height="100%" preload="metadata">
               {/* TODO: Add your video file path here */}

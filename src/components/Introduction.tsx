@@ -2,11 +2,16 @@ import React from 'react';
 
 export const Introduction: React.FC = () => {
   return (
-    <section className="section" id="introduction">
+    <section className="section" id="overview">
       <div className="container is-max-desktop">
         <div className="columns is-centered">
           <div className="column is-full-width">
-            <h2 className="title is-3 has-text-centered">Introduction</h2>
+            <h2 className="title is-3 has-text-centered">Overview</h2>
+            <div className="content has-text-centered my-4">
+              <video autoPlay controls muted loop width="100%" preload="metadata">
+                <source src="static/videos/overview_video.mp4" type="video/mp4" />
+              </video>
+            </div>
             <div className="content has-text-justified">
               <p>
                 Traditional scene reconstruction methods often struggle with complex articulated objects and dynamic environments. 
