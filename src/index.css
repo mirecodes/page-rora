@@ -330,6 +330,13 @@ body {
   border-radius: 2px;
 }
 
+.title.is-4,
+.title.is-5,
+.subtitle {
+  color: var(--primary-color) !important;
+}
+
+
 /* Content Improvements */
 .content.has-text-justified {
   font-size: 1.1rem;

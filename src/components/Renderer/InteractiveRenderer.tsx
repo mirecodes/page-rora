@@ -7,15 +7,22 @@ import { DATA_ROOT } from './constants';
 import type { RobotMetadata } from './types';
 import './InteractiveRenderer.css';
 
-export default function App() {
+interface InteractiveRendererProps {
+  manifestFile?: string;
+}
+
+export default function InteractiveRenderer({ manifestFile = 'scenes_real.json' }: InteractiveRendererProps) {
   const [scenes, setScenes] = useState<SceneConfig[]>([]);
   const [activeScene, setActiveScene] = useState<SceneConfig | null>(null);
   const [manifestError, setManifestError] = useState<string | null>(null);
   const [robotMetadata, setRobotMetadata] = useState<RobotMetadata | null>(null);
 
-  // Load scene manifest on mount
+  // Load scene manifest on mount or when manifestFile changes
   useEffect(() => {
-    fetch(`${DATA_ROOT}data/scenes.json`)
+    setScenes([]);
+    setActiveScene(null);
+    setManifestError(null);
+    fetch(`${DATA_ROOT}data/${manifestFile}`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
         return res.json() as Promise<ScenesManifest>;
@@ -27,10 +34,10 @@ export default function App() {
         }
       })
       .catch((err) => {
-        console.error('Failed to load scenes manifest:', err);
+        console.error(`Failed to load scenes manifest (${manifestFile}):`, err);
         setManifestError(String(err));
       });
-  }, []);
+  }, [manifestFile]);
 
   const handleSelectScene = useCallback((scene: SceneConfig) => {
     setActiveScene(scene);

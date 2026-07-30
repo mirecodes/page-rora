@@ -4,9 +4,8 @@ import { Hero } from './components/Hero';
 import { Abstract } from './components/Abstract';
 import { Introduction } from './components/Introduction';
 import { Methodology } from './components/Methodology';
-import { QualitativeResults } from './components/QualitativeResults';
-import { Experiments } from './components/Experiments';
-import { Applications } from './components/Applications';
+import { RealObjectReconstruction } from './components/RealObjectReconstruction';
+import { BaselineComparisons } from './components/BaselineComparisons';
 import { Poster } from './components/Poster';
 import { BibTeX } from './components/BibTeX';
 import { Footer } from './components/Footer';
@@ -22,9 +21,8 @@ function App() {
         <Abstract />
         <Introduction />
         <Methodology />
-        <QualitativeResults />
-        <Experiments />
-        <Applications />
+        <RealObjectReconstruction />
+        <BaselineComparisons />
         <Poster />
         <BibTeX />
       </main>
