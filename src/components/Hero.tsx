@@ -93,20 +93,25 @@ export const Hero: React.FC = () => {
         </div>
       </section>
 
-      {/* Teaser video */}
-      <section className="hero teaser">
+      {/* Teaser video (Overview) */}
+      <section className="hero teaser" id="overview">
         <div className="container is-max-desktop">
           <div className="hero-body">
-            <h2 className="title is-3 has-text-centered mb-5">Introduction Video</h2>
-            {/* TODO: Replace with your teaser video */}
+            <h2 className="title is-3 has-text-centered mb-5">Overview</h2>
             <video id="tree" autoPlay controls muted loop height="100%" preload="metadata">
-              {/* TODO: Add your video file path here */}
-              <source src="static/videos/articulation_video.mp4" type="video/mp4" />
+              <source src="static/videos/overview_video.mp4" type="video/mp4" />
             </video>
-            {/* TODO: Replace with your video description */}
-            <h2 className="subtitle has-text-centered">
-              Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.
-            </h2>
+            <div className="content has-text-justified mt-4">
+              <p>
+                We propose <strong>Realistic Object Reconstruction with Articulation (RORA)</strong>, 
+                an end-to-end pipeline for real-to-sim articulated object reconstruction from a single static 
+                video input. RORA exports a hybrid representation coupling 3D Gaussian Splatting (3DGS) for 
+                photorealistic rendering and URDF meshes for physical simulation. By Automatic Joint Suggestion Algorithm
+                with interactive human-in-the-loop (HIL) fine-tuning, RORA enables precise, 
+                simulation-ready asset creation for complex multi-joint objects and chained linkages without 
+                requiring dynamic motion scanning.
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -13,12 +13,72 @@ export const BaselineComparisons: React.FC = () => {
             <h2 className="title is-3 has-text-centered">Baseline Comparisons</h2>
             <div className="content has-text-justified">
               <p>
-                We evaluate our method against state-of-the-art reconstruction techniques, focusing on reconstruction quality, 
-                articulation accuracy, and rendering performance.
+                In this experiment section, we evaluated our pipeline against two state-of-the-art articulation baseslines on 
+                the PartNet-Mobility dataset. The baselines are Articulate-Anything (AA), which uses a Vision-Language-Model (VLM) 
+                prior (we have used Gemini-2.5-Flash as its internal VLM agent), and ScrewSplat, which optimizes extended 3DGS 
+                with screw axes from object scans of multi-configurations.
               </p>
+              <p>
+                Each framework is evaluated by two evaluation criteria. First is <strong>Geometry Metrics</strong>, which assess joint estimation precision against ground-truth in three categories:
+              </p>
+              <ul style={{ marginTop: '-0.5rem', marginBottom: '1rem' }}>
+                <li style={{ marginBottom: '0.8rem' }}>
+                  type error: count of misclassified or omitted joints.
+                  <div style={{ background: '#f8fafc', borderLeft: '3px solid var(--primary-color)', padding: '0.5rem 0.8rem', margin: '0.4rem 0', borderRadius: '4px' }}>
+                    <div style={{ fontSize: '0.95rem', fontFamily: 'serif', textAlign: 'center' }}>
+                      <em>e</em><sub>type</sub> = {"{ 0 if t̂ = t, 1 otherwise }"}
+                    </div>
+                    <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '0.2rem' }}>
+                      * <em>t̂</em>, <em>t</em> ∈ {"{revolute, prismatic, fixed}"} denote predicted and ground-truth joint types. Undetected joints count as 1.
+                    </div>
+                  </div>
+                </li>
+                <li style={{ marginBottom: '0.8rem' }}>
+                  Angular error: angular deviation between GT and estimated joints.
+                  <div style={{ background: '#f8fafc', borderLeft: '3px solid var(--primary-color)', padding: '0.5rem 0.8rem', margin: '0.4rem 0', borderRadius: '4px' }}>
+                    <div style={{ fontSize: '0.95rem', fontFamily: 'serif', textAlign: 'center' }}>
+                      <em>e</em><sub>angle</sub> = {"arccos( | n̂ · n | / ( ||n̂|| ||n|| ) ) ∈ [0°, 90°]"}
+                    </div>
+                    <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '0.2rem' }}>
+                      * <b>n̂</b> and <b>n</b> denote predicted and ground-truth joint rotation/translation axes.
+                    </div>
+                  </div>
+                </li>
+                <li style={{ marginBottom: '0.8rem' }}>
+                  Positional error: L2 Distance in orthogonal direction between GT and predicted joint origins.
+                  <div style={{ background: '#f8fafc', borderLeft: '3px solid var(--primary-color)', padding: '0.5rem 0.8rem', margin: '0.4rem 0', borderRadius: '4px' }}>
+                    <div style={{ fontSize: '0.95rem', fontFamily: 'serif', textAlign: 'center' }}>
+                      <em>e</em><sub>pos</sub> = {"|| d − (d · n̂) n̂ ||"}<sub>2</sub>
+                    </div>
+                    <div style={{ fontSize: '0.8rem', color: '#64748b', marginTop: '0.2rem' }}>
+                      * <b>d</b> is origin offset vector, <b>n̂</b> is predicted joint axis (applied only for revolute joints).
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <p>
+                Second is <strong>Visual Metrics</strong>, which evaluates rendering fidelity of test configurations, which is non-zero position at scanning, under three evaluation metrics:
+              </p>
+              <ul style={{ marginTop: '-0.5rem', marginBottom: '1.5rem' }}>
+                <li>peak signal-to-noise ratio (PSNR)</li>
+                <li>structural similarity index (SSIM)</li>
+                <li>learned perceptual image patch similarity (LPIPS)</li>
+              </ul>
+              
+              <p>
+                We evaluate all methods across objects in three difficulty levels categorized by kinematic complexity:
+              </p>
+              <ul style={{ marginTop: '-0.5rem', marginBottom: '1.5rem' }}>
+                <li>Category I: Single Joint Objects — 6 items</li>
+                <li>Category II: Multiple Joints Objects — 6 items</li>
+                <li>Category III: Chained Linkage Objects — 4 items</li>
+              </ul>
               
               {/* Geometry Metric Comparison */}
               <h3 className="title is-4" style={{ marginTop: '2rem' }}>Geometry Metric Comparison</h3>
+              <p className="mb-4">
+                The geometry metric evaluation results are presented in the table and plots below, where each marker in the scatter plots denotes an individual evaluation score for a specific object and joint. Note that in the positional error plot, hollow markers represent the orthogonal origin distance for prismatic joints. Since positional error has no physical relevance for prismatic joints, these data points are excluded from the reported statistics.
+              </p>
               <div className="table-container" style={{ maxWidth: '700px', margin: '1rem auto 0.5rem auto', borderRadius: '8px', overflow: 'hidden', border: '1px solid #000000' }}>
                 <table className="table is-fullwidth mb-0" style={{ backgroundColor: '#ffffff', tableLayout: 'fixed' }}>
                   <thead>
@@ -141,6 +201,9 @@ export const BaselineComparisons: React.FC = () => {
 
               {/* Visual Metric Comparison */}
               <h3 className="title is-4" style={{ marginTop: '3rem' }}>Visual Metric Comparison</h3>
+              <p className="mb-4">
+                The visual metric evaluation results are summarized in the table below, followed by object renderings in zero-configuration and test-configuration states.
+              </p>
               <div className="table-container" style={{ maxWidth: '700px', margin: '1rem auto 0.5rem auto', borderRadius: '8px', overflow: 'hidden', border: '1px solid #000000' }}>
                 <table className="table is-fullwidth mb-0" style={{ backgroundColor: '#ffffff', tableLayout: 'fixed' }}>
                   <thead>
@@ -260,12 +323,13 @@ export const BaselineComparisons: React.FC = () => {
                   </div>
                 )}
               </div>
+              {/* PartNet-Mobility Reconstruction Results */}
+              <h3 className="title is-4" style={{ marginTop: '3rem' }}>PartNet-Mobility Reconstruction Results</h3>
+              <p className="mb-4">
+                Below, you can interactively manipulate our reconstruction results on the PartNet-Mobility benchmark dataset used in the baseline evaluations.
+              </p>
             </div>
 
-            {/* PartNet-Mobility Reconstruction */}
-            <div className="content my-5">
-              <h3 className="title is-4 has-text-centered" style={{ marginTop: '3rem' }}>PartNet-Mobility Reconstruction</h3>
-            </div>
             <InteractiveRenderer manifestFile="scenes_partnet.json" />
           </div>
         </div>

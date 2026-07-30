@@ -5,6 +5,7 @@ import { Abstract } from './components/Abstract';
 import { Introduction } from './components/Introduction';
 import { Methodology } from './components/Methodology';
 import { RealObjectReconstruction } from './components/RealObjectReconstruction';
+import { RoboticApplications } from './components/RoboticApplications';
 import { BaselineComparisons } from './components/BaselineComparisons';
 import { Poster } from './components/Poster';
 import { BibTeX } from './components/BibTeX';
@@ -22,6 +23,7 @@ function App() {
         <Introduction />
         <Methodology />
         <RealObjectReconstruction />
+        <RoboticApplications />
         <BaselineComparisons />
         <Poster />
         <BibTeX />
