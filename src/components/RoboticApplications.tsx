@@ -31,9 +31,11 @@ const VideoCarousel: React.FC<PlatformCarouselProps> = ({
   return (
     <div className="mb-6 my-5">
       <h3 className="title is-4 mb-2">{platformTitle}</h3>
-      <p className="subtitle is-6 mb-4" style={{ color: '#4a5568' }}>
-        {platformDescription}
-      </p>
+      <div className="content has-text-justified mb-4">
+        <p>
+          {platformDescription}
+        </p>
+      </div>
 
       {/* Video Slider Container */}
       <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', overflow: 'hidden', padding: '1rem 0' }}>
@@ -153,39 +155,39 @@ const VideoCarousel: React.FC<PlatformCarouselProps> = ({
 };
 
 export const RoboticApplications: React.FC = () => {
-  const unrealSlides: VideoSlide[] = [
-    {
-      id: 'ue-1',
-      title: 'Dexterous Teleoperation with Inspire Hand',
-      videoSrc: 'static/videos/carousel1.mp4',
-    },
-    {
-      id: 'ue-2',
-      title: 'VIST Interface Demonstration Data Collection',
-      videoSrc: 'static/videos/carousel2.mp4',
-    },
-    {
-      id: 'ue-3',
-      title: 'Unreal Engine 5.3 HXR Simulator Interaction',
-      videoSrc: 'static/videos/carousel3.mp4',
-    },
-  ];
-
   const isaacSlides: VideoSlide[] = [
     {
       id: 'isaac-1',
-      title: 'Humanoid Bimanual Teleoperation in Isaac Sim',
-      videoSrc: 'static/videos/articulation_video.mp4',
+      title: 'Stand',
+      videoSrc: 'static/videos/isaac/stand.mp4',
     },
     {
       id: 'isaac-2',
-      title: 'Real-Time Control via Meta Quest Controllers',
-      videoSrc: 'static/videos/overview_video.mp4',
+      title: 'Humanoid Bimanual Teleoperation in Isaac Sim',
+      videoSrc: 'static/videos/articulation_video.mp4',
     },
     {
       id: 'isaac-3',
       title: 'Natural Object Manipulation & Digital Twin Transfer',
       videoSrc: 'static/videos/banner_video.mp4',
+    },
+  ];
+
+  const unrealSlides: VideoSlide[] = [
+    {
+      id: 'ue-1',
+      title: 'Spraying a Potted Plant',
+      videoSrc: 'static/videos/unreal/Spray.mp4',
+    },
+    {
+      id: 'ue-2',
+      title: 'Rotating a Grinder Handle',
+      videoSrc: 'static/videos/unreal/Grinder.mp4',
+    },
+    {
+      id: 'ue-3',
+      title: 'Manipulating a Multi-DoF Box',
+      videoSrc: 'static/videos/unreal/Box.mp4',
     },
   ];
 
@@ -198,30 +200,30 @@ export const RoboticApplications: React.FC = () => {
             
             <div className="content has-text-justified mb-5">
               <p>
-                To confirm the practical utility of our assets for robotic data collection, 
-                we deployed them into two distinct simulation platforms. First, we imported the assets 
-                into the HXR Simulator built on Unreal Engine 5.3, enabling dexterous teleoperation with 
-                an Inspire Hand via the VIST interface. With this setup, operators can collect demonstration 
-                data like real-world interaction. Second, we deployed the assets in NVIDIA Isaac Sim on a humanoid 
-                platform, where bimanual robotic hands were controlled in real time using Meta Quest controllers. 
-                This allowed operators to naturally interact with the objects as they would in physical reality. 
-                These deployments demonstrate that our real-to-sim pipeline effectively bridges the domain gap, 
-                providing realistic, articulated assets in simulated environments for advanced robotic applications.
+                Our end-to-end framework exports readily simulatable, articulated assets which are composed of URDF models 
+                and part-level segmented 3D Gaussian Splatting (3DGS) representations. Users can easily import 
+                these assets directly into simulation environments supporting Gaussian rendering (e.g., NVIDIA Isaac Sim 
+                or Unreal Engine 5). Thorugh this framework, users can promptly create an realistic scene in virtual environment,
+                allowing effective data collection for robotic manipulation tasks.
               </p>
             </div>
 
-            {/* Carousel 1: Unreal Engine 5 (HXR Simulator) */}
-            <VideoCarousel
-              platformTitle="Unreal Engine 5.3 (HXR Simulator)"
-              platformDescription="Dexterous teleoperation with Inspire Hand via VIST interface for demonstration data collection."
-              slides={unrealSlides}
-            />
-
-            {/* Carousel 2: NVIDIA Isaac Sim */}
+            {/* Carousel 1: NVIDIA Isaac Sim (First) */}
             <VideoCarousel
               platformTitle="NVIDIA Isaac Sim"
-              platformDescription="Humanoid bimanual manipulation controlled in real time using Meta Quest VR controllers."
+              platformDescription="We deployed the assets in NVIDIA Isaac Sim on a humanoid platform,
+              where bimanual robotic hands were controlled in real time using Meta Quest controllers,
+              allowing operators to interact with the articulated objects with both hands."
               slides={isaacSlides}
+            />
+
+            {/* Carousel 2: Unreal Engine 5.3 (HXR Simulator) (Second) */}
+            <VideoCarousel
+              platformTitle="Unreal Engine 5.3 (HXR Simulator)"
+              platformDescription="We imported the assets into the HXR Simulator built on Unreal Engine 5.3,
+              enabling dexterous teleoperation with an Inspire Hand via the VIST interface
+              to collect precise manipulation data."
+              slides={unrealSlides}
             />
           </div>
         </div>
