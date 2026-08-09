@@ -54,10 +54,23 @@
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
+.selector-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 6px;
+  border-radius: 14px;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.selector-item:hover .selector-img {
+  transform: scale(1.1);
+}
+
 .selector-item.active .selector-square {
   border-color: #0ea5e9;
-  background: rgba(14, 165, 233, 0.05);
-  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
+  background: rgba(14, 165, 233, 0.08);
+  box-shadow: 0 8px 16px rgba(14, 165, 233, 0.2);
 }
 
 .selector-placeholder {

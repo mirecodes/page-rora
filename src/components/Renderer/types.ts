@@ -10,6 +10,7 @@ export interface SceneConfig {
   description: string;
   path: string;
   gaussians: GaussianEntry[];
+  thumbnail?: string;
 }
 
 export interface ScenesManifest {
