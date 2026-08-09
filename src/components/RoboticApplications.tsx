@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { BlobVideo } from './BlobVideo';
 
 interface VideoSlide {
   id: string;
@@ -115,17 +116,15 @@ const VideoCarousel: React.FC<PlatformCarouselProps> = ({
               <div style={{ textAlign: 'center', marginBottom: '8px', fontSize: '0.9rem', fontStyle: 'italic', color: '#475569', fontWeight: 500 }}>
                 {item.title}
               </div>
-              <video
+              <BlobVideo
                 key={item.videoSrc}
                 autoPlay={item.isCurrent}
                 controls={item.isCurrent}
                 muted
                 loop
-                preload="metadata"
+                src={item.videoSrc}
                 style={{ width: '100%', borderRadius: '8px', display: 'block', objectFit: 'cover' }}
-              >
-                <source src={item.videoSrc} type="video/mp4" />
-              </video>
+              />
             </div>
           ))}
         </div>

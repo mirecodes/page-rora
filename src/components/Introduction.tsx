@@ -1,4 +1,5 @@
 import React from 'react';
+import { BlobVideo } from './BlobVideo';
 
 export const Introduction: React.FC = () => {
   return (
@@ -8,9 +9,7 @@ export const Introduction: React.FC = () => {
           <div className="column is-full-width">
             <h2 className="title is-3 has-text-centered">Introduction Video</h2>
             <div className="content has-text-centered my-4">
-              <video autoPlay controls muted loop width="100%" preload="metadata">
-                <source src="./static/videos/introduction.mp4" type="video/mp4" />
-              </video>
+              <BlobVideo autoPlay controls muted loop width="100%" src="./static/videos/introduction.mp4" />
             </div>
             <div className="content has-text-justified">
             </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { FaFilePdf, FaGithub } from 'react-icons/fa';
 
+import { BlobVideo } from './BlobVideo';
+
 export const Hero: React.FC = () => {
   return (
     <>
@@ -97,9 +99,7 @@ export const Hero: React.FC = () => {
         <div className="container is-max-desktop">
           <div className="hero-body">
             <h2 className="title is-3 has-text-centered mb-5">Overview</h2>
-            <video id="tree" autoPlay controls muted loop height="100%" preload="metadata">
-              <source src="./static/videos/overview.mp4" type="video/mp4" />
-            </video>
+            <BlobVideo id="tree" autoPlay controls muted loop height="100%" src="./static/videos/overview.mp4" />
             <div className="content has-text-justified mt-4">
               <p>
                 We propose <strong>Realistic Object Reconstruction with Articulation (RORA)</strong>, 
