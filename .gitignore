@@ -51,10 +51,13 @@ Desktop.ini
 .env.local
 
 # Large static assets (Project specific)
-# Only ignore if they are huge and managed externally
-public/static/dataset/
+# public/static/dataset/
 # public/static/pdfs/
 # public/static/videos/
+
+# Ignore heavy raw point cloud files and render previews not needed by web viewer
+public/static/dataset/**/*.ply
+public/static/dataset/**/render/
 
 # Vite
 vite.config.ts.timestamp-*
