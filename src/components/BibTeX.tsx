@@ -4,12 +4,11 @@ import { FaCopy } from 'react-icons/fa';
 export const BibTeX: React.FC = () => {
   const [copied, setCopied] = useState(false);
 
-  const bibtexCode = `@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
+  const bibtexCode = `@article{rora2026anonymous,
+  title={RORA: Realistic Object Reconstruction with Articulation},
+  author={Anonymous Authors},
+  journal={Under Review},
+  year={2026}
 }`;
 
   const handleCopy = () => {
