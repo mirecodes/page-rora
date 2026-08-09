@@ -157,19 +157,59 @@ const VideoCarousel: React.FC<PlatformCarouselProps> = ({
 export const RoboticApplications: React.FC = () => {
   const isaacSlides: VideoSlide[] = [
     {
-      id: 'isaac-1',
-      title: 'Stand',
-      videoSrc: 'static/videos/isaac/stand.mp4',
+      id: 'isaac-doorlock-1',
+      title: 'Doorlock 1',
+      videoSrc: 'static/videos/isaac/doorlock_1.mp4',
     },
     {
-      id: 'isaac-2',
-      title: 'Humanoid Bimanual Teleoperation in Isaac Sim',
-      videoSrc: 'static/videos/articulation_video.mp4',
+      id: 'isaac-doorlock-2',
+      title: 'Doorlock 2',
+      videoSrc: 'static/videos/isaac/doorlock_2.mp4',
     },
     {
-      id: 'isaac-3',
-      title: 'Natural Object Manipulation & Digital Twin Transfer',
-      videoSrc: 'static/videos/banner_video.mp4',
+      id: 'isaac-ext-1',
+      title: 'Extinguisher 1',
+      videoSrc: 'static/videos/isaac/ext_1.mp4',
+    },
+    {
+      id: 'isaac-ext-2',
+      title: 'Extinguisher 2',
+      videoSrc: 'static/videos/isaac/ext_2.mp4',
+    },
+    {
+      id: 'isaac-ext-3',
+      title: 'Extinguisher 3',
+      videoSrc: 'static/videos/isaac/ext_3.mp4',
+    },
+    {
+      id: 'isaac-lamp-1',
+      title: 'Lamp 1',
+      videoSrc: 'static/videos/isaac/lamp_1.mp4',
+    },
+    {
+      id: 'isaac-lamp-2',
+      title: 'Lamp 2',
+      videoSrc: 'static/videos/isaac/lamp_2.mp4',
+    },
+    {
+      id: 'isaac-lamp-3',
+      title: 'Lamp 3',
+      videoSrc: 'static/videos/isaac/lamp_3.mp4',
+    },
+    {
+      id: 'isaac-microwave-a',
+      title: 'Microwave A',
+      videoSrc: 'static/videos/isaac/microwave_a.mp4',
+    },
+    {
+      id: 'isaac-microwave-b',
+      title: 'Microwave B',
+      videoSrc: 'static/videos/isaac/microwave_b.mp4',
+    },
+    {
+      id: 'isaac-microwave-c',
+      title: 'Microwave C',
+      videoSrc: 'static/videos/isaac/microwave_c.mp4',
     },
   ];
 

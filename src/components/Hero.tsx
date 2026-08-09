@@ -42,9 +42,9 @@ export const Hero: React.FC = () => {
 
                 <div className="column has-text-centered">
                   <div className="publication-links">
-                    {/* TODO: Update with your arXiv paper ID */}
+                    {/* arXiv Paper Links */}
                     <span className="link-block">
-                      <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank" rel="noreferrer"
+                      <a href="https://arxiv.org/pdf/2608.04842.pdf" target="_blank" rel="noreferrer"
                         className="external-link button is-normal is-rounded is-dark">
                         <span className="icon">
                           <FaFilePdf />
@@ -75,9 +75,8 @@ export const Hero: React.FC = () => {
                       </a>
                     </span>
 
-                    {/* TODO: Update with your arXiv paper ID */}
                     <span className="link-block">
-                      <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank" rel="noreferrer"
+                      <a href="https://arxiv.org/abs/2608.04842" target="_blank" rel="noreferrer"
                         className="external-link button is-normal is-rounded is-dark">
                         <span className="icon">
                           <i className="ai ai-arxiv"></i> {/* Assuming academicons are still used */}
