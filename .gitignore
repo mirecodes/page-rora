@@ -56,8 +56,8 @@ Desktop.ini
 # public/static/videos/
 
 # Ignore heavy raw point cloud files and render previews not needed by web viewer
-public/static/dataset/**/*.ply
-public/static/dataset/**/render/
+**/static/dataset/**/*.ply
+**/static/dataset/**/render/
 
 # Vite
 vite.config.ts.timestamp-*
