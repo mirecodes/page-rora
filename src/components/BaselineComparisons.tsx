@@ -184,17 +184,17 @@ export const BaselineComparisons: React.FC = () => {
               <div className="content mb-5">
                 {analysisTab === 0 && (
                   <div className="animate__animated animate__fadeIn">
-                    <img src="static/images/graph_geometry/type_error.png" alt="Type Error" width="100%" style={{ borderRadius: '8px' }} />
+                    <img src="./static/images/graph_geometry/type_error.png" alt="Type Error" width="100%" style={{ borderRadius: '8px' }} />
                   </div>
                 )}
                 {analysisTab === 1 && (
                   <div className="animate__animated animate__fadeIn">
-                    <img src="static/images/graph_geometry/angular_error.png" alt="Angular Error" width="100%" style={{ borderRadius: '8px' }} />
+                    <img src="./static/images/graph_geometry/angular_error.png" alt="Angular Error" width="100%" style={{ borderRadius: '8px' }} />
                   </div>
                 )}
                 {analysisTab === 2 && (
                   <div className="animate__animated animate__fadeIn">
-                    <img src="static/images/graph_geometry/positional_error.png" alt="Positional Error" width="100%" style={{ borderRadius: '8px' }} />
+                    <img src="./static/images/graph_geometry/positional_error.png" alt="Positional Error" width="100%" style={{ borderRadius: '8px' }} />
                   </div>
                 )}
               </div>
@@ -309,17 +309,17 @@ export const BaselineComparisons: React.FC = () => {
               <div className="content mb-5">
                 {qualitativeTab === 0 && (
                   <div className="animate__animated animate__fadeIn">
-                    <img src="static/images/eval_renderings/cat1_comparison.png" alt="Qualitative Results Category 1" width="100%" style={{ borderRadius: '8px' }} />
+                    <img src="./static/images/eval_renderings/cat1_comparison.png" alt="Qualitative Results Category 1" width="100%" style={{ borderRadius: '8px' }} />
                   </div>
                 )}
                 {qualitativeTab === 1 && (
                   <div className="animate__animated animate__fadeIn">
-                    <img src="static/images/eval_renderings/cat2_comparison.png" alt="Qualitative Results Category 2" width="100%" style={{ borderRadius: '8px' }} />
+                    <img src="./static/images/eval_renderings/cat2_comparison.png" alt="Qualitative Results Category 2" width="100%" style={{ borderRadius: '8px' }} />
                   </div>
                 )}
                 {qualitativeTab === 2 && (
                   <div className="animate__animated animate__fadeIn">
-                    <img src="static/images/eval_renderings/cat3_comparison.png" alt="Qualitative Results Category 3" width="100%" style={{ borderRadius: '8px' }} />
+                    <img src="./static/images/eval_renderings/cat3_comparison.png" alt="Qualitative Results Category 3" width="100%" style={{ borderRadius: '8px' }} />
                   </div>
                 )}
               </div>

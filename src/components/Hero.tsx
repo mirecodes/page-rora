@@ -98,7 +98,7 @@ export const Hero: React.FC = () => {
           <div className="hero-body">
             <h2 className="title is-3 has-text-centered mb-5">Overview</h2>
             <video id="tree" autoPlay controls muted loop height="100%" preload="metadata">
-              <source src="static/videos/overview.mp4" type="video/mp4" />
+              <source src="./static/videos/overview.mp4" type="video/mp4" />
             </video>
             <div className="content has-text-justified mt-4">
               <p>

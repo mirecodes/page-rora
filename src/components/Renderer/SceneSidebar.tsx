@@ -8,18 +8,18 @@ interface SceneSidebarProps {
 }
 
 const THUMBNAIL_MAP: Record<string, string> = {
-  real_diffuser: 'static/images/thumnails/diffuser.png',
-  real_doorlock: 'static/images/thumnails/doorlock.png',
-  real_extinguisher: 'static/images/thumnails/extinguisher.png',
-  real_gum: 'static/images/thumnails/gum.png',
-  real_lamp: 'static/images/thumnails/lamp.png',
-  real_laptop: 'static/images/thumnails/laptop.png',
-  real_microwave: 'static/images/thumnails/microwave.png',
-  real_shaker: 'static/images/thumnails/bottle.png',
-  real_grinder: 'static/images/thumnails/grinder.png',
-  real_spray: 'static/images/thumnails/spray.png',
-  real_toolbox: 'static/images/thumnails/toolbox.png',
-  real_wifi: 'static/images/thumnails/wifi.png',
+  real_diffuser: './static/images/thumnails/diffuser.png',
+  real_doorlock: './static/images/thumnails/doorlock.png',
+  real_extinguisher: './static/images/thumnails/extinguisher.png',
+  real_gum: './static/images/thumnails/gum.png',
+  real_lamp: './static/images/thumnails/lamp.png',
+  real_laptop: './static/images/thumnails/laptop.png',
+  real_microwave: './static/images/thumnails/microwave.png',
+  real_shaker: './static/images/thumnails/bottle.png',
+  real_grinder: './static/images/thumnails/grinder.png',
+  real_spray: './static/images/thumnails/spray.png',
+  real_toolbox: './static/images/thumnails/toolbox.png',
+  real_wifi: './static/images/thumnails/wifi.png',
 };
 
 export function SceneSidebar({ scenes, activeSceneId, onSelectScene }: SceneSidebarProps) {

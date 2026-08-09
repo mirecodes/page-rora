@@ -1,1 +1,1 @@
-export const DATA_ROOT = 'static/dataset/';
+export const DATA_ROOT = './static/dataset/';

@@ -159,57 +159,57 @@ export const RoboticApplications: React.FC = () => {
     {
       id: 'isaac-doorlock-1',
       title: 'Doorlock 1',
-      videoSrc: 'static/videos/isaac/doorlock_1.mp4',
+      videoSrc: './static/videos/isaac/doorlock_1.mp4',
     },
     {
       id: 'isaac-doorlock-2',
       title: 'Doorlock 2',
-      videoSrc: 'static/videos/isaac/doorlock_2.mp4',
+      videoSrc: './static/videos/isaac/doorlock_2.mp4',
     },
     {
       id: 'isaac-ext-1',
       title: 'Extinguisher 1',
-      videoSrc: 'static/videos/isaac/ext_1.mp4',
+      videoSrc: './static/videos/isaac/ext_1.mp4',
     },
     {
       id: 'isaac-ext-2',
       title: 'Extinguisher 2',
-      videoSrc: 'static/videos/isaac/ext_2.mp4',
+      videoSrc: './static/videos/isaac/ext_2.mp4',
     },
     {
       id: 'isaac-ext-3',
       title: 'Extinguisher 3',
-      videoSrc: 'static/videos/isaac/ext_3.mp4',
+      videoSrc: './static/videos/isaac/ext_3.mp4',
     },
     {
       id: 'isaac-lamp-1',
       title: 'Lamp 1',
-      videoSrc: 'static/videos/isaac/lamp_1.mp4',
+      videoSrc: './static/videos/isaac/lamp_1.mp4',
     },
     {
       id: 'isaac-lamp-2',
       title: 'Lamp 2',
-      videoSrc: 'static/videos/isaac/lamp_2.mp4',
+      videoSrc: './static/videos/isaac/lamp_2.mp4',
     },
     {
       id: 'isaac-lamp-3',
       title: 'Lamp 3',
-      videoSrc: 'static/videos/isaac/lamp_3.mp4',
+      videoSrc: './static/videos/isaac/lamp_3.mp4',
     },
     {
       id: 'isaac-microwave-a',
       title: 'Microwave A',
-      videoSrc: 'static/videos/isaac/microwave_a.mp4',
+      videoSrc: './static/videos/isaac/microwave_a.mp4',
     },
     {
       id: 'isaac-microwave-b',
       title: 'Microwave B',
-      videoSrc: 'static/videos/isaac/microwave_b.mp4',
+      videoSrc: './static/videos/isaac/microwave_b.mp4',
     },
     {
       id: 'isaac-microwave-c',
       title: 'Microwave C',
-      videoSrc: 'static/videos/isaac/microwave_c.mp4',
+      videoSrc: './static/videos/isaac/microwave_c.mp4',
     },
   ];
 
@@ -217,17 +217,17 @@ export const RoboticApplications: React.FC = () => {
     {
       id: 'ue-1',
       title: 'Spraying a Potted Plant',
-      videoSrc: 'static/videos/unreal/Spray.mp4',
+      videoSrc: './static/videos/unreal/Spray.mp4',
     },
     {
       id: 'ue-2',
       title: 'Rotating a Grinder Handle',
-      videoSrc: 'static/videos/unreal/Grinder.mp4',
+      videoSrc: './static/videos/unreal/Grinder.mp4',
     },
     {
       id: 'ue-3',
       title: 'Manipulating a Multi-DoF Box',
-      videoSrc: 'static/videos/unreal/Box.mp4',
+      videoSrc: './static/videos/unreal/Box.mp4',
     },
   ];
 
