@@ -21,8 +21,8 @@ export default function InteractiveRenderer({ manifestFile = 'scenes_real.json' 
   useEffect(() => {
     setScenes([]);
     setActiveScene(null);
-    setManifestError(null);
-    fetch(`${DATA_ROOT}data/${manifestFile}`)
+    const cleanManifest = manifestFile.replace(/^data\//, '');
+    fetch(`${DATA_ROOT}${cleanManifest}`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}: ${res.statusText}`);
         return res.json() as Promise<ScenesManifest>;

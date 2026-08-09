@@ -194,7 +194,8 @@ export function useGaussianViewer({
       if (aborted) return;
 
       const loader = new URDFLoader();
-      const urdfPath = `${DATA_ROOT}data/${scene.path}/urdf/object.urdf`;
+      const scenePath = scene.path.replace(/^(data\/|ours\/)+/, '');
+      const urdfPath = `${DATA_ROOT}${scenePath}/urdf/object.urdf`;
       
       try {
         const robot = await new Promise<any>((resolve, reject) => {
@@ -233,7 +234,7 @@ export function useGaussianViewer({
 
         robot.updateMatrixWorld(true);
 
-        const basePath = `${DATA_ROOT}data/${scene.path}/gaussian`;
+        const basePath = `${DATA_ROOT}${scenePath}/gaussian`;
 
         Object.keys(robot.links).forEach((linkName) => {
           const link = robot.links[linkName];
