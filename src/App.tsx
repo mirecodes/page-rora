@@ -7,8 +7,6 @@ import { Methodology } from './components/Methodology';
 import { RealObjectReconstruction } from './components/RealObjectReconstruction';
 import { RoboticApplications } from './components/RoboticApplications';
 import { BaselineComparisons } from './components/BaselineComparisons';
-import { Poster } from './components/Poster';
-import { BibTeX } from './components/BibTeX';
 import { Footer } from './components/Footer';
 
 function App() {
@@ -25,8 +23,6 @@ function App() {
         <RealObjectReconstruction />
         <RoboticApplications />
         <BaselineComparisons />
-        <Poster />
-        <BibTeX />
       </main>
 
       <Footer />

@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaFilePdf, FaGithub } from 'react-icons/fa';
 
 import { BlobVideo } from './BlobVideo';
 
@@ -15,79 +14,10 @@ export const Hero: React.FC = () => {
                 <h1 className="title is-1 publication-title">
                   RORA: Realistic Object Reconstruction with Articulation
                 </h1>
-                <div className="is-size-5 publication-authors" style={{ fontWeight: 600, color: '#2b5876' }}>
-                  <span className="author-block">
-                    Lee Hyesung<sup>1</sup>,
-                  </span>{' '}
-                  <span className="author-block">
-                    Lee Youngseon<sup>1</sup>,
-                  </span>{' '}
-                  <span className="author-block">
-                    Lee Kyutae<sup>2</sup>,
-                  </span>{' '}
-                  <span className="author-block">
-                    Lee Dongjun<sup>1</sup>,
-                  </span>{' '}
-                  <span className="author-block">
-                    Lee Yongseok<sup>2,*</sup>
-                  </span>
+                <div className="is-size-4 publication-authors" style={{ fontWeight: 600, color: '#2b5876', marginTop: '1rem', marginBottom: '2rem' }}>
+                  <span className="author-block">Anonymous Authors</span>
                 </div>
 
-                <div className="is-size-5 publication-authors" style={{ marginTop: '0.5rem' }}>
-                  <span className="author-block"><sup>1</sup>Seoul National University</span>,&nbsp;&nbsp;
-                  <span className="author-block"><sup>2</sup>DGIST Robin Lab</span>
-                  <br />
-                  <span className="author-block" style={{ fontSize: '0.85em', color: '#555', marginTop: '0.25rem', display: 'inline-block' }}>
-                    <sup>*</sup>Corresponding author: <a href="mailto:yslee@dgist.ac.kr" style={{ color: '#3273dc' }}>yslee@dgist.ac.kr</a>
-                  </span>
-                </div>
-
-                <div className="column has-text-centered">
-                  <div className="publication-links">
-                    {/* arXiv Paper Links */}
-                    <span className="link-block">
-                      <a href="https://arxiv.org/pdf/2608.04842.pdf" target="_blank" rel="noreferrer"
-                        className="external-link button is-normal is-rounded is-dark">
-                        <span className="icon">
-                          <FaFilePdf />
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    {/* TODO: Add your supplementary material PDF or remove this section */}
-                    {/* <span className="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank" rel="noreferrer"
-                        className="external-link button is-normal is-rounded is-dark">
-                        <span className="icon">
-                          <FaFilePdf />
-                        </span>
-                        <span>Supplementary</span>
-                      </a>
-                    </span> */}
-
-                    {/* TODO: Replace with your GitHub repository URL */}
-                    <span className="link-block">
-                      <a href="https://github.com/YOUR REPO HERE" target="_blank" rel="noreferrer"
-                        className="external-link button is-normal is-rounded is-dark">
-                        <span className="icon">
-                          <FaGithub />
-                        </span>
-                        <span>Code</span>
-                      </a>
-                    </span>
-
-                    <span className="link-block">
-                      <a href="https://arxiv.org/abs/2608.04842" target="_blank" rel="noreferrer"
-                        className="external-link button is-normal is-rounded is-dark">
-                        <span className="icon">
-                          <i className="ai ai-arxiv"></i> {/* Assuming academicons are still used */}
-                        </span>
-                        <span>arXiv</span>
-                      </a>
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
