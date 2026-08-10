@@ -5,18 +5,17 @@ interface BlobVideoProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
 }
 
 export const BlobVideo: React.FC<BlobVideoProps> = ({ src, ...props }) => {
-  const [blobUrl, setBlobUrl] = useState<string | null>(null);
+  const [videoSrc, setVideoSrc] = useState<string>(src);
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  // Normalize path
-  const normalizedSrc = src.replace(/^\.\//, '');
 
   useEffect(() => {
     let active = true;
     let createdUrl: string | null = null;
 
-    // Try fetching video blob directly
-    fetch(src)
+    // Resolve absolute URL based on document location
+    const absoluteUrl = new URL(src, window.location.href).href;
+
+    fetch(absoluteUrl)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.blob();
@@ -25,10 +24,13 @@ export const BlobVideo: React.FC<BlobVideoProps> = ({ src, ...props }) => {
         if (!active) return;
         const mp4Blob = new Blob([blob], { type: 'video/mp4' });
         createdUrl = URL.createObjectURL(mp4Blob);
-        setBlobUrl(createdUrl);
+        setVideoSrc(createdUrl);
       })
       .catch((err) => {
-        console.warn(`Failed to load video blob for ${src}:`, err);
+        console.warn(`Failed to fetch video blob for ${src} (${absoluteUrl}):`, err);
+        if (active) {
+          setVideoSrc(absoluteUrl);
+        }
       });
 
     return () => {
@@ -39,17 +41,19 @@ export const BlobVideo: React.FC<BlobVideoProps> = ({ src, ...props }) => {
     };
   }, [src]);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.load();
+    }
+  }, [videoSrc]);
+
   return (
     <video
       ref={videoRef}
+      src={videoSrc}
       playsInline
       {...props}
-    >
-      {blobUrl && <source src={blobUrl} type="video/mp4" />}
-      <source src={src} type="video/mp4" />
-      <source src={normalizedSrc} type="video/mp4" />
-      <source src={`/${normalizedSrc}`} type="video/mp4" />
-    </video>
+    />
   );
 };
 
