@@ -1,0 +1,282 @@
+{
+  "scenes": [
+    {
+      "id": "real_diffuser",
+      "name": "Real Diffuser",
+      "description": "real_diffuser scene",
+      "path": "ours/real_diffuser",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        },
+        {
+          "id": 3,
+          "file": "gaussian_3.ply",
+          "label": "Part 3"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/diffuser.png"
+    },
+    {
+      "id": "real_doorlock",
+      "name": "Real Doorlock",
+      "description": "real_doorlock scene",
+      "path": "ours/real_doorlock",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/doorlock.png"
+    },
+    {
+      "id": "real_extinguisher",
+      "name": "Real Extinguisher",
+      "description": "real_extinguisher scene",
+      "path": "ours/real_extinguisher",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/extinguisher.png"
+    },
+    {
+      "id": "real_gum",
+      "name": "Real Gum",
+      "description": "real_gum scene",
+      "path": "ours/real_gum",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/gum.png"
+    },
+    {
+      "id": "real_lamp",
+      "name": "Real Lamp",
+      "description": "real_lamp scene",
+      "path": "ours/real_lamp",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        },
+        {
+          "id": 3,
+          "file": "gaussian_3.ply",
+          "label": "Part 3"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/lamp.png"
+    },
+    {
+      "id": "real_laptop",
+      "name": "Real Laptop",
+      "description": "real_laptop scene",
+      "path": "ours/real_laptop",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/laptop.png"
+    },
+    {
+      "id": "real_microwave",
+      "name": "Real Microwave",
+      "description": "real_microwave scene",
+      "path": "ours/real_microwave",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/microwave.png"
+    },
+    {
+      "id": "real_shaker",
+      "name": "Real Shaker",
+      "description": "real_shaker scene",
+      "path": "ours/real_shaker",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        },
+        {
+          "id": 3,
+          "file": "gaussian_3.ply",
+          "label": "Part 3"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/bottle.png"
+    },
+    {
+      "id": "real_grinder",
+      "name": "Real Grinder",
+      "description": "real_grinder scene",
+      "path": "ours/real_grinder",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/grinder.png"
+    },
+    {
+      "id": "real_spray",
+      "name": "Real Spray",
+      "description": "real_spray scene",
+      "path": "ours/real_spray",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        },
+        {
+          "id": 3,
+          "file": "gaussian_3.ply",
+          "label": "Part 3"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/spray.png"
+    },
+    {
+      "id": "real_toolbox",
+      "name": "Real Toolbox",
+      "description": "real_toolbox scene",
+      "path": "ours/real_toolbox",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        },
+        {
+          "id": 3,
+          "file": "gaussian_3.ply",
+          "label": "Part 3"
+        },
+        {
+          "id": 4,
+          "file": "gaussian_4.ply",
+          "label": "Part 4"
+        },
+        {
+          "id": 5,
+          "file": "gaussian_5.ply",
+          "label": "Part 5"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/toolbox.png"
+    },
+    {
+      "id": "real_wifi",
+      "name": "Real Wifi",
+      "description": "real_wifi scene",
+      "path": "ours/real_wifi",
+      "gaussians": [
+        {
+          "id": 1,
+          "file": "gaussian_1.ply",
+          "label": "Part 1"
+        },
+        {
+          "id": 2,
+          "file": "gaussian_2.ply",
+          "label": "Part 2"
+        },
+        {
+          "id": 3,
+          "file": "gaussian_3.ply",
+          "label": "Part 3"
+        },
+        {
+          "id": 4,
+          "file": "gaussian_4.ply",
+          "label": "Part 4"
+        },
+        {
+          "id": 5,
+          "file": "gaussian_5.ply",
+          "label": "Part 5"
+        }
+      ],
+      "thumbnail": "static/images/thumnails/wifi.png"
+    }
+  ]
+}
