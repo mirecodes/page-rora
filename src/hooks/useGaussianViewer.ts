@@ -7,6 +7,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls';
 import type { SceneConfig, SplatLoadState, RobotMetadata, JointMetadata } from '../components/Renderer/types';
 import yaml from 'js-yaml';
 import { DATA_ROOT } from '../components/Renderer/constants';
+import { SANDBOXED } from '../components/Renderer/sandboxFetch';
 
 interface UseGaussianViewerOptions {
   containerRef: React.RefObject<HTMLDivElement | null>;
@@ -251,12 +252,22 @@ export function useGaussianViewer({
           if (gaussianIndex !== -1) {
             const g = scene.gaussians[gaussianIndex];
             const splatURL = `${basePath}/${g.file.replace('.ply', '.splat')}`;
-            const splatMesh = new SplatMesh({ url: splatURL });
-            (splatMesh as any).isSplatMesh = true;
-
             const inverseWorldMatrix = new THREE.Matrix4().copy(link.matrixWorld).invert();
-            splatMesh.applyMatrix4(inverseWorldMatrix);
-            link.add(splatMesh);
+            const attach = (splatMesh: SplatMesh) => {
+              (splatMesh as any).isSplatMesh = true;
+              splatMesh.applyMatrix4(inverseWorldMatrix);
+              link.add(splatMesh);
+            };
+
+            if (SANDBOXED) {
+              // Spark fetches `url` inside its worker, out of reach of the sandbox fetch shim.
+              fetch(splatURL)
+                .then((res) => res.arrayBuffer())
+                .then((buf) => { if (!aborted) attach(new SplatMesh({ fileBytes: buf, fileName: splatURL })); })
+                .catch((err) => console.error(`Failed to load ${splatURL}:`, err));
+            } else {
+              attach(new SplatMesh({ url: splatURL }));
+            }
 
             loadStates[gaussianIndex] = { ...loadStates[gaussianIndex], status: 'loaded', progress: 100 };
             onLoadStateChange([...loadStates]);

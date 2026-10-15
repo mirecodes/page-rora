@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "pack-dataset": "node scripts/pack-dataset.mjs"
   },
   "dependencies": {
     "@sparkjsdev/spark": "^2.0.0",
