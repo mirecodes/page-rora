@@ -17,21 +17,16 @@ export function SceneInfo({ metadata }: SceneInfoProps) {
   return (
     <div className="scene-info">
       <div className="info-section">
-        <h3 className="info-title">Object Overview</h3>
-        <div className="info-grid">
-          <div className="info-item">
-            <span className="info-label">Name</span>
-            <span className="info-value">{metadata.name}</span>
-          </div>
-          <div className="info-item">
-            <span className="info-label">Links</span>
-            <span className="info-value">{metadata.linkCount} items</span>
-          </div>
-          <div className="info-item">
-            <span className="info-label">Joints</span>
-            <span className="info-value">{metadata.jointCount} active</span>
-          </div>
-        </div>
+        <h3 className="info-title">Link Tree</h3>
+        <pre className="link-tree">
+          {metadata.tree.map((line, i) => (
+            <div key={i}>
+              <span className="tree-branch">{line.prefix}</span>
+              {line.link}
+              {line.joint && <span className="tree-joint">  ({line.joint})</span>}
+            </div>
+          ))}
+        </pre>
       </div>
 
       <div className="info-section">

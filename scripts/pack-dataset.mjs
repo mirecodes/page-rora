@@ -6,7 +6,7 @@ import { execFileSync } from 'node:child_process';
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs';
 import { dirname } from 'node:path';
 
-for (const dir of ['dataset', 'videos']) {
+for (const dir of ['dataset']) {
   const files = execFileSync('git', ['ls-files', `static/${dir}`], { encoding: 'utf8' }).split('\n').filter(Boolean);
   rmSync(`static/${dir}_js`, { recursive: true, force: true });
   for (const f of files) {

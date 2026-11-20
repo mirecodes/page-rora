@@ -4,7 +4,7 @@ import { SparkRenderer, SplatMesh } from '@sparkjsdev/spark';
 import URDFLoader from 'urdf-loader';
 // @ts-ignore
 import { OrbitControls } from 'three/addons/controls/OrbitControls';
-import type { SceneConfig, SplatLoadState, RobotMetadata, JointMetadata } from '../components/Renderer/types';
+import type { SceneConfig, SplatLoadState, RobotMetadata, JointMetadata, LinkTreeLine } from '../components/Renderer/types';
 import yaml from 'js-yaml';
 import { DATA_ROOT } from '../components/Renderer/constants';
 import { SANDBOXED } from '../components/Renderer/sandboxFetch';
@@ -20,7 +20,19 @@ interface UseGaussianViewerOptions {
   showGrid: boolean;
 }
 
-
+// Child links of a urdf-loader link, drawn like `tree` output: link → joint → child link.
+function linkTree(link: any, indent = ''): LinkTreeLine[] {
+  const joints = link.children.filter((c: any) => c.isURDFJoint);
+  return joints.flatMap((joint: any, i: number) => {
+    const last = i === joints.length - 1;
+    const child = joint.children.find((c: any) => c.isURDFLink);
+    if (!child) return [];
+    return [
+      { prefix: indent + (last ? '└── ' : '├── '), link: child.urdfName, joint: `${joint.urdfName} · ${joint.jointType}` },
+      ...linkTree(child, indent + (last ? '    ' : '│   ')),
+    ];
+  });
+}
 
 export function useGaussianViewer({
   containerRef,
@@ -224,13 +236,15 @@ export function useGaussianViewer({
         });
         setJoints(discoveredJoints);
 
-        const linkNames = Object.keys(robot.links);
+        // Most URDFs pin link_1 to a dummy `base` link with one fixed joint; show link_1 as the base then.
+        const rootJoints = robot.children.filter((c: any) => c.isURDFJoint);
+        const baseLink =
+          rootJoints.length === 1 && rootJoints[0].jointType === 'fixed'
+            ? rootJoints[0].children.find((c: any) => c.isURDFLink) ?? robot
+            : robot;
         setRobotMetadata({
-          name: robot.name || scene.name,
-          linkCount: Math.max(0, linkNames.length - 1),
-          links: linkNames,
-          jointCount: discoveredJoints.length,
           joints: discoveredJoints,
+          tree: [{ prefix: '', link: baseLink.urdfName, joint: 'base' }, ...linkTree(baseLink)],
         });
 
         robot.updateMatrixWorld(true);
@@ -376,11 +390,13 @@ export function useGaussianViewer({
           renderer.setScissorTest(false);
           renderer.render(scene3D, camera);
 
-          // Render Gizmo Scene in Corner
+          // Render Gizmo Scene in the top-right corner (viewport y is measured from the bottom)
           const padding = 20;
+          const gizmoX = currentWidth - gizmoSize - padding;
+          const gizmoY = currentHeight - gizmoSize - padding;
           renderer.setScissorTest(true);
-          renderer.setScissor(currentWidth - gizmoSize - padding, padding, gizmoSize, gizmoSize);
-          renderer.setViewport(currentWidth - gizmoSize - padding, padding, gizmoSize, gizmoSize);
+          renderer.setScissor(gizmoX, gizmoY, gizmoSize, gizmoSize);
+          renderer.setViewport(gizmoX, gizmoY, gizmoSize, gizmoSize);
           
           // Sync gizmo camera orientation
           gizmoCamera.position.copy(camera.position).sub(controls.target).normalize().multiplyScalar(3);

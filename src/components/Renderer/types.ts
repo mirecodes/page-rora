@@ -37,10 +37,14 @@ export interface JointMetadata {
   child: string;
 }
 
+// One line of the link tree, e.g. prefix "│   └── ", link "link_3", joint "joint_2_3 · revolute"
+export interface LinkTreeLine {
+  prefix: string;
+  link: string;
+  joint?: string;
+}
+
 export interface RobotMetadata {
-  name: string;
-  linkCount: number;
-  links: string[];
-  jointCount: number;
   joints: JointMetadata[];
+  tree: LinkTreeLine[];
 }

@@ -1,10 +1,10 @@
 // anonymous.4open.science serves pages with `CSP: sandbox` (no allow-same-origin): the page
 // has a null origin and the host sends no CORS headers, so fetch() of our own files fails.
-// There, requests under static/{dataset,videos}/ are served from static/<dir>_js/<path>.js,
+// There, requests under static/dataset/ are served from static/dataset_js/<path>.js,
 // loaded via <script> (built by scripts/pack-dataset.mjs). Importing this module installs the shim.
 export const SANDBOXED = window.origin === 'null';
 
-const PACKED_DIRS = ['dataset', 'videos'];
+const PACKED_DIRS = ['dataset'];
 const nativeFetch = window.fetch.bind(window);
 const inFlight = new Map<string, Promise<Uint8Array<ArrayBuffer>>>();
 const resolvers = new Map<Element, (b64: string) => void>();

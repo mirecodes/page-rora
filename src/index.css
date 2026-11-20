@@ -756,5 +756,43 @@ a:focus {
   }
 }
 
+/* Evaluation tables (Sections 2 and 3), styled like the Kinematic Structure table */
+.table-container:has(> .eval-table) {
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--background-primary);
+}
+.eval-table {
+  font-size: 0.85rem;
+  white-space: nowrap;
+  background: var(--background-primary);
+  color: #334155;
+}
+.eval-table th,
+.eval-table td {
+  vertical-align: middle;
+  padding: 0.3em 0.6em;
+  border-color: #f1f5f9;
+  color: inherit;
+}
+.eval-table thead th,
+.eval-table tbody th {
+  background: var(--background-secondary);
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+.eval-table thead tr:last-child th {
+  border-bottom: 1px solid var(--border-color);
+}
+.eval-table tr.group-start > * {
+  border-top: 1px solid var(--border-color);
+}
+.joint-swatch {
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  margin-right: 0.4em;
+  border-radius: 2px;
+}
 
 

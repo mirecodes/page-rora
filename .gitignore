@@ -64,3 +64,6 @@ vite.config.ts.timestamp-*
 
 # Testing
 /coverage
+
+# Review documents (manuscript, response letter): never publish
+papers/

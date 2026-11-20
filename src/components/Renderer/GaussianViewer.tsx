@@ -52,8 +52,6 @@ export function GaussianViewer({ scene, onMetadataChange }: GaussianViewerProps)
     }
   }, [joints]);
 
-  const allLoaded = loadStates.length > 0 && loadStates.every((s) => s.status === 'loaded');
-
   const handleJointChange = (name: string, value: number) => {
     setJointValues(prev => ({ ...prev, [name]: value }));
   };
@@ -96,15 +94,17 @@ export function GaussianViewer({ scene, onMetadataChange }: GaussianViewerProps)
             </div>
             
             <div className="control-item">
-              <label>Global Rotation (Z)</label>
-              <input 
-                type="range" 
-                min="-180" 
-                max="180" 
-                value={globalRotation} 
-                onChange={(e) => setGlobalRotation(parseFloat(e.target.value))} 
+              <div className="control-row">
+                <label>Global Rotation (Z)</label>
+                <span className="value-label">{globalRotation}°</span>
+              </div>
+              <input
+                type="range"
+                min="-180"
+                max="180"
+                value={globalRotation}
+                onChange={(e) => setGlobalRotation(parseFloat(e.target.value))}
               />
-              <span className="value-label">{globalRotation}°</span>
             </div>
           </div>
 
@@ -115,32 +115,25 @@ export function GaussianViewer({ scene, onMetadataChange }: GaussianViewerProps)
               </div>
               {joints.map(joint => (
                 <div key={joint.name} className="control-item">
-                  <label>{joint.name}</label>
-                  <input 
-                    type="range" 
-                    min={joint.min} 
-                    max={joint.max} 
+                  <div className="control-row">
+                    <label>{joint.name}</label>
+                    <span className="value-label">
+                      {(jointValues[joint.name] ?? joint.value).toFixed(1)}
+                      {joint.type === 'revolute' ? '°' : 'm'}
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    min={joint.min}
+                    max={joint.max}
                     step="0.1"
-                    value={jointValues[joint.name] ?? joint.value} 
-                    onChange={(e) => handleJointChange(joint.name, parseFloat(e.target.value))} 
+                    value={jointValues[joint.name] ?? joint.value}
+                    onChange={(e) => handleJointChange(joint.name, parseFloat(e.target.value))}
                   />
-                  <span className="value-label">
-                    {(jointValues[joint.name] ?? joint.value).toFixed(1)}
-                    {joint.type === 'revolute' ? '°' : 'm'}
-                  </span>
                 </div>
               ))}
             </div>
           )}
-        </div>
-      )}
-
-      {/* Scene info badge */}
-      {scene && allLoaded && (
-        <div className="viewer-scene-badge">
-          <span className="badge-dot" />
-          <span>{scene.name}</span>
-          <span className="badge-count">{scene.gaussians.length} gaussians</span>
         </div>
       )}
     </div>
