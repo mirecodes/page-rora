@@ -285,7 +285,7 @@ const FigureTabs: React.FC<{ dir: string; alt: string }> = ({ dir, alt }) => (
 export const EvaluationDataset: React.FC = () => (
   <section className="section" id="evaluation-dataset">
     <div className="container is-max-desktop">
-      <h2 className="title is-3 has-text-centered">2. Evaluation Dataset</h2>
+      <h2 className="title is-3 has-text-centered">3. Evaluation Dataset</h2>
       <div className="content has-text-justified">
         <p>
           16 objects from PartNet-Mobility with 33 movable joints: Category I (single joint, 6 objects), Category II

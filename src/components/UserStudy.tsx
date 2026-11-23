@@ -26,7 +26,7 @@ const Rows: React.FC<{ rows: string[][] }> = ({ rows }) =>
 export const UserStudy: React.FC = () => (
   <section className="section" id="user-study">
     <div className="container is-max-desktop">
-      <h2 className="title is-3 has-text-centered">3. User Study</h2>
+      <h2 className="title is-3 has-text-centered">4. User Study</h2>
       <p className="content has-text-justified">
         Joint editing with and without suggestions in the same GUI (Sec. IV-B, Table IV of the manuscript). 15
         participants without prior articulation experience each articulated two objects per condition.
